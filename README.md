@@ -9,7 +9,7 @@ maven { url "https://jitpack.io"}
 <h3>In your app's build.gradle file you must add</h3>
 
 ```gradle
-compile 'com.github.pethoalpar:alpsqlite:v1'
+compile 'com.github.pethoalpar:AlparSqlite:v1.0'
 ```
 
 <h3>Declare entity</h3>
