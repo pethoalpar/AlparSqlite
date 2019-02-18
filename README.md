@@ -1,49 +1,54 @@
-<h1>How to use alpsqlite - library</h1>
+# How to use alpsqlite - library
 
-<h3>In your build.gradle file you must add</h3>
+### In your build.gradle file you must add
 
 ```gradle
 maven { url "https://jitpack.io"}
 ```
 
-<h3>In your app's build.gradle file you must add</h3>
+### In your app's build.gradle file you must add 
 
 ```gradle
 compile 'com.github.pethoalpar:AlparSqlite:v1.0'
 ```
 
-<h3>Declare entity</h3>
+### Declare entity
 
 ```java
 @Table(name = "PERSON")
 public class Person {
 
     @Id
-    @Column(columnName = "id", type = Types.INTEGER)
+    @Column(columnName = "id")
     protected Integer id;
 
-    @Column(columnName = "name", type = Types.TEXT)
+    @Column(columnName = "name")
     protected String name;
 
-    @Column(columnName = "age", type = Types.INTEGER)
+    @Column(columnName = "age")
     protected int age;
 }
 ```
 
-<h3>Insert entity to database</h3>
+### Init database table
 
 ```java
-SQLBusinessDelegate<Person> dbDelegate = new SQLBusinessDelegate<Person>(context,Person.class,"database name", null,1);
-int id = dbDelegate.save(person);
+DatabaseService<Person> dbDelegate = new DatabaseService<>(Person.class, this);
 ```
 
-<h3>Update entity</h3>
+### Insert entity to database
+
+```java
+Long id = dbDelegate.insert(person);
+```
+
+### Update entity
 
 ```java
 dbDelegate.update(person);
 ```
 
-<h3>Find entity by id</h3>
+### Find entity by id
 
 ```java
 dbDelegate.findById((int) id);
