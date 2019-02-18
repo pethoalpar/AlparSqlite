@@ -1,7 +1,6 @@
 package sqlite.pethoalpar.com.sqlite;
 
 
-import sqlite.pethoalpar.com.alqlite.Types;
 import sqlite.pethoalpar.com.alqlite.annotation.Column;
 import sqlite.pethoalpar.com.alqlite.annotation.Id;
 import sqlite.pethoalpar.com.alqlite.annotation.Table;
@@ -14,14 +13,25 @@ import sqlite.pethoalpar.com.alqlite.annotation.Table;
 public class Person {
 
     @Id
-    @Column(columnName = "id", type = Types.INTEGER)
+    @Column(columnName = "id")
     protected Integer id;
 
-    @Column(columnName = "name", type = Types.TEXT)
+    @Column(columnName = "name")
     protected String name;
 
-    @Column(columnName = "age", type = Types.INTEGER)
+    @Column(columnName = "age")
     protected int age;
+
+    @Column(columnName = "userName")
+    private String userName;
+
+    public String getUserName () {
+        return userName;
+    }
+
+    public void setUserName ( String userName ) {
+        this.userName = userName;
+    }
 
     public Integer getId() {
         return id;

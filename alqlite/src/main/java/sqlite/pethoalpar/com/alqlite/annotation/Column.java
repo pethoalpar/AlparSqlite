@@ -6,8 +6,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import sqlite.pethoalpar.com.alqlite.Types;
-
 /**
  * Created by pethoalpar on 6/25/2016.
  */
@@ -16,5 +14,4 @@ import sqlite.pethoalpar.com.alqlite.Types;
 @Target(ElementType.FIELD)
 public @interface Column {
     String columnName();
-    Types type();
 }
